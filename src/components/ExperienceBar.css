@@ -1,0 +1,142 @@
+.experience-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Arial', sans-serif;
+  margin: 10px 0;
+}
+
+.level-display {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  border: 2px solid #d35400;
+  border-radius: 20px;
+  padding: 4px 12px;
+  min-width: 50px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.level-text {
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.exp-bar-container {
+  flex: 1;
+  position: relative;
+}
+
+.exp-numbers {
+  font-size: 12px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  margin-bottom: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.exp-bar-background {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  border: 2px solid #7f8c8d;
+  border-radius: 10px;
+  height: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.exp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9b59b6, #8e44ad);
+  transition: width 0.5s ease;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-bar-fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+  border-radius: 8px;
+}
+
+.exp-bar-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(155, 89, 182, 0.3) 50%, 
+    transparent 100%);
+  border-radius: 8px;
+  animation: glow 2s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+/* 经验条尺寸变体 */
+.experience-bar.small .exp-bar-background {
+  height: 12px;
+}
+
+.experience-bar.small .level-display {
+  padding: 2px 8px;
+  min-width: 40px;
+}
+
+.experience-bar.small .level-text {
+  font-size: 12px;
+}
+
+.experience-bar.small .exp-numbers {
+  font-size: 10px;
+}
+
+.experience-bar.large .exp-bar-background {
+  height: 20px;
+}
+
+.experience-bar.large .level-display {
+  padding: 6px 16px;
+  min-width: 60px;
+}
+
+.experience-bar.large .level-text {
+  font-size: 16px;
+}
+
+.experience-bar.large .exp-numbers {
+  font-size: 14px;
+}

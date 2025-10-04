@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMORPG UI 组件库演示</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0c2461, #1e3799);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-section h2 {
+            color: #f39c12;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+        
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .component-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .component-card h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 MMORPG UI 组件库</h1>
+            <p>基于React构建的专业游戏UI组件库</p>
+        </div>
+        
+        <div class="demo-section">
+            <h2>🚀 功能特性</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">❤️</div>
+                    <h3>血量条组件</h3>
+                    <p>动态显示生命值，支持颜色变化和尺寸调整</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>技能栏组件</h3>
+                    <p>支持技能冷却、快捷键显示、法力消耗</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎒</div>
+                    <h3>背包组件</h3>
+                    <p>支持物品拖拽、品质显示、数量统计</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📈</div>
+                    <h3>经验条组件</h3>
+                    <p>显示等级和经验进度，带有动画效果</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>🛠️ 技术栈</h2>
+            <div class="tech-stack">
+                <div class="tech-item">React 19</div>
+                <div class="tech-item">CSS3</div>
+                <div class="tech-item">Webpack</div>
+                <div class="tech-item">Babel</div>
+                <div class="tech-item">Electron</div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>📖 快速开始</h2>
+            <div class="component-grid">
+                <div class="component-card">
+                    <h3>安装依赖</h3>
+                    <pre><code>npm install</code></pre>
+                </div>
+                <div class="component-card">
+                    <h3>开发模式</h3>
+                    <pre><code>npm run dev</code></pre>
+                </div>
+                <div class="component-card">
+                    <h3>构建生产版本</h3>
+                    <pre><code>npm run build</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section" style="text-align: center;">
+            <h2>🎯 立即体验</h2>
+            <p>启动开发服务器来查看完整的交互式演示</p>
+            <a href="http://localhost:3001" class="cta-button" target="_blank">
+                查看实时演示 →
+            </a>
+            <p style="opacity: 0.8; margin-top: 10px;">
+                或者运行 <code>npm run dev</code> 启动本地开发服务器
+            </p>
+        </div>
+        
+        <div class="demo-section">
+            <h2>📚 组件示例</h2>
+            <div class="component-grid">
+                <div class="component-card">
+                    <h3>血量条组件</h3>
+                    <pre><code>const HealthBar = ({ 
+  currentHealth, 
+  maxHealth,
+  showNumbers = true,
+  size = 'medium'
+}) => {
+  // 组件实现...
+};</code></pre>
+                </div>
+                <div class="component-card">
+                    <h3>技能栏组件</h3>
+                    <pre><code>const SkillBar = ({ 
+  skills = [], 
+  onSkillClick,
+  activeSkill = null,
+  cooldowns = {}
+}) => {
+  // 组件实现...
+};</code></pre>
+                </div>
+                <div class="component-card">
+                    <h3>背包组件</h3>
+                    <pre><code>const Inventory = ({ 
+  items = [], 
+  onItemClick,
+  onItemDrag,
+  isOpen = false
+}) => {
+  // 组件实现...
+};</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

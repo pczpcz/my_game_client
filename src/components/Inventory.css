@@ -1,0 +1,204 @@
+.inventory-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.inventory-container {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  border: 3px solid #4a90e2;
+  border-radius: 15px;
+  padding: 20px;
+  min-width: 400px;
+  max-width: 90vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: 'Arial', sans-serif;
+}
+
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.inventory-header h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+  background: #e74c3c;
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.close-button:hover {
+  background: #c0392b;
+}
+
+.inventory-grid {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.inventory-slot {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inventory-slot:hover {
+  border-color: #3498db;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.inventory-slot.drag-over {
+  border-color: #f39c12;
+  background: rgba(243, 156, 18, 0.3);
+}
+
+.inventory-slot.occupied {
+  border-color: #27ae60;
+}
+
+.inventory-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+.inventory-item:hover {
+  transform: scale(1.1);
+}
+
+.inventory-item:active {
+  cursor: grabbing;
+}
+
+.item-icon {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.item-quantity {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 10px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.item-quality {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.item-quality.common {
+  background: #bdc3c7;
+}
+
+.item-quality.uncommon {
+  background: #2ecc71;
+}
+
+.item-quality.rare {
+  background: #3498db;
+}
+
+.item-quality.epic {
+  background: #9b59b6;
+}
+
+.item-quality.legendary {
+  background: #f39c12;
+}
+
+.slot-number {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+}
+
+.inventory-footer {
+  padding-top: 10px;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.inventory-stats {
+  color: #ecf0f1;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 背包尺寸变体 */
+.inventory-container.small .inventory-slot {
+  width: 50px;
+  height: 50px;
+}
+
+.inventory-container.small .item-icon {
+  font-size: 14px;
+}
+
+.inventory-container.large .inventory-slot {
+  width: 80px;
+  height: 80px;
+}
+
+.inventory-container.large .item-icon {
+  font-size: 22px;
+}
